@@ -1,0 +1,102 @@
+%% Packages %%
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+%\usepackage{pgfplots}
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed} % Theorem styling
+%\usepackage[explicit]{titlesec}
+%\usepackage{fix-cm}
+%\usepackage{fancyhdr}
+\usepackage[nottoc, numbib]{tocbibind}
+\usepackage{bm}
+
+%% Math commands %%
+
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\F}{\ensuremath{\mathbb{F}}}
+%\DeclareMathOperator{\ker}{ker}
+%\DeclareMathOperator{\im}{im}
+%\DeclareMathOperator{\sgn}{sgn}
+
+%% Colours %%
+
+% Rosepine (https://rosepinetheme.com/palette/)
+\definecolor{LoveMain}{HTML}{eb6f92}
+\definecolor{LoveDawn}{HTML}{b4637a}
+\definecolor{TextMain}{HTML}{e0def4}
+\definecolor{TextDawn}{HTML}{575279}
+\definecolor{GoldMain}{HTML}{f6c177}
+\definecolor{GoldDawn}{HTML}{ea9d34}
+\definecolor{RoseMain}{HTML}{ebbcba}
+\definecolor{RoseDawn}{HTML}{d7827e}
+\definecolor{PineMain}{HTML}{31748f}
+\definecolor{PineDawn}{HTML}{286983}
+\definecolor{FoamMain}{HTML}{9ccfd8}
+\definecolor{FoamDawn}{HTML}{56949f}
+\definecolor{IrisMain}{HTML}{c4a7e7}
+\definecolor{IrisDawn}{HTML}{907aa9}
+
+%% Hyperref %%
+\usepackage[]{hyperref}
+
+%% Fancy Header %%
+
+%\renewcommand{\headrulewidth}{0.5}
+%\renewcommand{\headrule}{\hbox to\headwidth{%
+%\color{GoldDawn!60}\leaders\hrule height \headrulewidth\hfill}}
+
+%% Theorem style %%
+
+\mdfsetup{skipabove=1em,skipbelow=0em, innertopmargin=5pt, innerbottommargin=6pt}
+
+\theoremstyle{definition}
+
+\declaretheoremstyle[
+  headfont=\bfseries,
+  bodyfont=\normalfont,
+  mdframed={ nobreak },
+  numbered=no,
+]{thmbw}
+
+\declaretheoremstyle[
+  headfont=\bfseries,
+  bodyfont=\normalfont,
+  qed=\diamond,
+  numbered=no,
+]{thmsub}
+
+\declaretheoremstyle[
+headfont=\bfseries,
+bodyfont=\normalfont,
+numbered=no,
+mdframed={
+rightline=false,
+topline=false,
+bottomline=false,
+},
+qed=\qedsymbol
+]{proofbw}
+
+
+%% Theorems, Lemmas, etc %%
+\declaretheorem[style=thmbw, name=Definition, numberwithin=section]{definition}
+\declaretheorem[style=thmsub, name=Example, numberwithin=definition]{example}
+\declaretheorem[style=thmbw, name=Theorem, sibling=definition]{theorem}
+\declaretheorem[style=thmbw, name=Lemma, sibling=definition]{lemma}
+\declaretheorem[style=thmbw, name=Corollary, numberwithin=theorem]{corollary}
+\declaretheorem[style=thmbw, name=Proposition, sibling=definition]{proposition}
+
+\declaretheorem[style=proofbw, name=Proof]{replacementproof}
+\renewenvironment{proof}[1][\proofname]{\begin{replacementproof}}{\end{replacementproof}}
+
+\author{Akira Tanase}
