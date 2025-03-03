@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage[a4paper, margin=1.2in]{geometry}
-\usepackage{microtype}
+\usepackage{microtype}:
 \usepackage{comment}
 \usepackage{graphicx}
 %\usepackage{mathpazo}
@@ -15,10 +15,43 @@
 
 \maketitle
 
-\section{Mathematical Background}
-This project assumes knowledge of integration in higher dimensions. This section will contain a brief survey of the relevant mathematical background, aimed at a non-mathematical audience.
+\section*{Count Rate Integral}
 
-\section{Physics Background}
+We assume:
+\begin{itemize}
+  \item $L$ is the activity (or emission rate) of the source.
+  \item The source occupies a volume parameterized by $(x_1, y_1, z_1)$ 
+        in the bounds $x_1 \in [X_{1,\min}, X_{1,\max}]$, 
+        $y_1 \in [Y_{1,\min}, Y_{1,\max}]$, 
+        $z_1 \in [Z_{1,\min}, Z_{1,\max}]$.
+  \item The detector is centered at $x = x_2$ on the $x$-axis and spans 
+        $(y_2,z_2)$ in $y_2 \in [Y_{2,\min}, Y_{2,\max}]$, 
+        $z_2 \in [Z_{2,\min}, Z_{2,\max}]$.
+  \item The integrand below is an example for a simple $1/r^2$ geometry factor 
+        (plus angular dependence).  You may need to adjust powers of $r$ 
+        depending on your precise setup (solid angle, flux, etc.).
+\end{itemize}
+
+A typical form for the count rate $C$ (number of detections per unit time) can be written as a $5$-dimensional integral:
+
+\[
+C \;=\; \frac{L}{4 \pi}
+\,\iiint_{\substack{x_1 \in [X_{1,\min}, X_{1,\max}]\\
+                   y_1 \in [Y_{1,\min}, Y_{1,\max}]\\
+                   z_1 \in [Z_{1,\min}, Z_{1,\max}]}}
+\,\iint_{\substack{y_2 \in [Y_{2,\min}, Y_{2,\max}]\\
+                   z_2 \in [Z_{2,\min}, Z_{2,\max}]}}
+\frac{x_2 + x_1}{\bigl((x_2 + x_1)^2 + (y_2 + y_1)^2 + (z_2 + z_1)^2 \bigr)^{2}}
+\,dy_2\,dz_2\,dx_1\,dy_1\,dz_1.
+\]
+
+Here:
+\[
+r^2 \;=\; (x_2 + x_1)^2 \;+\; (y_2 + y_1)^2 \;+\; (z_2 + z_1)^2,
+\]
+and we have written one possible form of the integrand that places the detector plane at $x = x_2$ (i.e.\ we shift $x_1$ by $x_2$).  
+
+Adjust exponents (e.g.\ $1/r^2$ or $1/r^3$) to match your particular physical model (flux, solid angle subtended, etc.).
 
 \end{document}
 
