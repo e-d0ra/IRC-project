@@ -40,7 +40,7 @@ errors = np.sqrt(equation3(x2))
 plt.plot(x2, equation3(x2))
 xlabel("Distance from point source to detector")
 ylabel("Count rate")
-title("Equation 3")
+title("")
 
 upper = gaussian_filter1d(equation3(x2) + errors, sigma = 3)
 lower = gaussian_filter1d(equation3(x2) - errors, sigma = 3)
