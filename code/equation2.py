@@ -28,3 +28,5 @@ def integrate_point_source_modified(L, x2, detector_size):
     )
     
     return (L / (4 * np.pi)) * integral_value
+
+#comment
