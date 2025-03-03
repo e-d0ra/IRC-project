@@ -34,7 +34,7 @@ def equation3(x2):
     integ=domain*y_mean    
     return integ
 
-x2 = np.linspace(0, 0.1, num=1000, endpoint = True)
+x2 = np.linspace(0.001, 0.1, num=1000, endpoint = True)
 errors = np.sqrt(equation3(x2))
 
 plt.plot(x2, equation3(x2))
