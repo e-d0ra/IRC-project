@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.ndimage import gaussian_filter1d
 
 N=1000000 # Number of simulated particles for Monte Carlo method
 # Limits of the integrals, dimensions in SI units
@@ -11,8 +12,8 @@ z3b=0.005
 z3a=-0.005
 y3=np.random.uniform(y3a, y3b, N)
 z3=np.random.uniform(z3a, z3b, N)
-x1b=0
-x1a=-L
+x1b=L
+x1a=0
 x1=np.random.uniform(x1a, x1b, N)
 y1b=r1
 y1a=-r1
@@ -35,15 +36,20 @@ def equation3(x2):
     return integ
 
 x2 = np.linspace(0.001, 0.1, num=1000, endpoint = True)
-errors = np.sqrt(equation3(x2))
 
-plt.plot(x2, equation3(x2))
-xlabel("Distance from point source to detector")
-ylabel("Count rate")
-title("Equation 3")
 
-upper = gaussian_filter1d(equation3(x2) + errors, sigma = 3)
-lower = gaussian_filter1d(equation3(x2) - errors, sigma = 3)
-fill_between(x2, upper, lower, color = "blue", alpha = 0.2)
+y=np.array([])
+for n in range (0, len(x2)):
+    y=np.append(y, equation3(x2[n]))
+errors = np.sqrt(y)
+
+plt.plot(x2, y)
+plt.xlabel("Distance from point source to detector")
+plt.ylabel("Count rate")
+plt.title("Equation 3")
+
+upper = gaussian_filter1d(y + errors, sigma = 3)
+lower = gaussian_filter1d(y - errors, sigma = 3)
+plt.fill_between(x2, upper, lower, color = "blue", alpha = 0.2)
 
 plt.show()
