@@ -34,8 +34,8 @@ def equation3(x2):
     integ=domain*y_mean    
     return integ
 
-x2 = []
-errors = #error array 
+x2 = np.linspace(0, 0.1, num=1000, endpoint = True)
+errors = 
 
 plt.plot(x2, equation3(x2))
 xlabel("Distance from point source to detector")
