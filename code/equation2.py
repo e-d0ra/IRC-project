@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.integrate import dblquad
 
-def integrate_point_source_modified(L, x2, detector_size):
+def integrate_point_source_modified(x2):
     """
     Computes the count rate integral for a point source using SciPy's dblquad.
     
@@ -18,6 +18,8 @@ def integrate_point_source_modified(L, x2, detector_size):
     integral_value : float
         Computed integral value for the count rate.
     """
+    L=0.0028
+    detector_size=0.005
     def integrand(y3, z3):
         return x2 / ((x2**2 + y3**2 + z3**2) ** (3 / 2))
     
