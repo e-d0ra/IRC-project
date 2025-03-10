@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 def calculate_flux(r):
     """Calculate the flux F given radius r."""
-    L = 1_000_000  # Luminosity
+    L = 1000000  # Luminosity
     if np.any (r == 0):
         raise ValueError("Radius r cannot be zero to avoid division by zero.")
     return L / (4 * np.pi * r**2)
