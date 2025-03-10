@@ -43,6 +43,7 @@ for n in range (0, len(x2)):
     y=np.append(y, equation3(x2[n]))
 errors = np.sqrt(y)
 
+plt.figure(dpi=1200)
 plt.plot(x2, y)
 plt.xlabel("Distance from point source to detector")
 plt.ylabel("Count rate")
@@ -51,5 +52,5 @@ plt.title("Equation 3")
 upper = gaussian_filter1d(y + errors, sigma = 3)
 lower = gaussian_filter1d(y - errors, sigma = 3)
 plt.fill_between(x2, upper, lower, color = "blue", alpha = 0.2)
-
+plt.savefig('Equation 3.png')
 plt.show()
