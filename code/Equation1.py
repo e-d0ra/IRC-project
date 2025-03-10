@@ -18,5 +18,6 @@ plt.xlabel('Radius (r)')  # Label for x-axis
 plt.ylabel('Flux (F)')    # Label for y-axis
 plt.title('Flux Equation')  # subject to change
 plt.grid(True)  # Adding grid for better visualization
+plt.savefig('../code/diagrams/eq1.png', dpi=400)
 plt.show()
 
