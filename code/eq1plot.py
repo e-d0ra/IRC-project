@@ -9,7 +9,7 @@ def calculate_flux(r):
     return L / (4 * np.pi * r**2)
 
 # Generate values for r (radius)
-r_values = np.linspace(1, 100, 100)  # Example: radius values from 1 to 100
+r_values = np.linspace(0.0001, 0.1, 1000)  # Example: radius values from 1 to 100
 flux_values = calculate_flux(r_values)
 
 # Plotting the graph
