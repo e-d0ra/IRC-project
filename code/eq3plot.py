@@ -44,10 +44,13 @@ for n in range (0, len(x2)):
 errors = np.sqrt(y)
 
 plt.figure(dpi=400)
-plt.plot(x2, y)
-plt.xlabel("Distance from point source to detector")
-plt.ylabel("Count rate")
+plt.plot(x2, y, color='blue')
+plt.xlabel("Distance from point source to detector (m)")
+plt.ylabel("Expected count rate (s-1)")
 plt.title("Equation 3")
+plt.grid()
+plt.xlim(0, 0.1)
+plt.ylim(0, 80000)
 
 upper = gaussian_filter1d(y + errors, sigma = 3)
 lower = gaussian_filter1d(y - errors, sigma = 3)
