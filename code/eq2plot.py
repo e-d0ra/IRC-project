@@ -44,10 +44,10 @@ errors = np.sqrt(y)
 
 plt.plot(x2, y, color = "blue")
 plt.xlabel("Distance between point source and detector (m)")
-plt.ylabel("Expected count rate (s-1)")
+plt.ylabel("Expected count rate (Bq)")
 plt.title("Equation 2")
 plt.xlim(0, 0.1)
-plt.ylim(0, 450000)
+plt.ylim(0, 400000)
 plt.grid()
 
 upper = gaussian_filter1d(y + errors, sigma = 3)
