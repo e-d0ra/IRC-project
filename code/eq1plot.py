@@ -13,7 +13,7 @@ r_values = np.linspace(1, 100, 100)  # Example: radius values from 1 to 100
 flux_values = calculate_flux(r_values)
 
 # Plotting the graph
-plt.plot(r_values, flux_values)
+plt.plot(r_values, flux_values, color='blue')
 plt.xlabel('Distance between point source and detector (m)')  # Label for x-axis
 plt.ylabel('Expected count rate (Bq)')    # Label for y-axis
 plt.title('Equation 1')  # subject to change
