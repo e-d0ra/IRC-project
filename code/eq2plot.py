@@ -51,4 +51,5 @@ upper = gaussian_filter1d(y + errors, sigma = 3)
 lower = gaussian_filter1d(y - errors, sigma = 3)
 plt.fill_between(x2, upper, lower, color = "pink", alpha = 0.2)
 
+plt.savefig('../code/diagrams/eq2.png')
 plt.show()
