@@ -18,8 +18,8 @@ plt.xlabel('Distance between point source and detector (m)')  # Label for x-axis
 plt.ylabel('Expected count rate (Bq)')    # Label for y-axis
 plt.title('Equation 1')  # subject to change
 plt.grid(True)  # Adding grid for better visualization
-plt.xlabel(0, 0.1)
-plt.ylabel(0, 80000)
+plt.xlim(0, 0.1)
+plt.ylim(0, 80000)
 plt.savefig('../code/diagrams/eq1.png', dpi=400)
 plt.show()
 
