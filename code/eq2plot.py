@@ -42,6 +42,7 @@ for n in range (0, len(x2)):
     
 errors = np.sqrt(y)
 
+plt.figure(dpi=400)
 plt.plot(x2, y, color = "blue")
 plt.xlabel("Distance between point source and detector (m)")
 plt.ylabel("Expected count rate (Bq)")
@@ -53,6 +54,6 @@ plt.grid()
 upper = gaussian_filter1d(y + errors, sigma = 3)
 lower = gaussian_filter1d(y - errors, sigma = 3)
 plt.fill_between(x2, upper, lower, color = "pink", alpha = 0.2)
-
+plt.tight_layout()
 plt.savefig('../code/diagrams/eq2.png')
 plt.show()
