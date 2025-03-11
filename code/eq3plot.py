@@ -50,7 +50,7 @@ plt.ylabel("Expected count rate (Bq)")
 plt.title("Equation 3")
 plt.grid()
 plt.xlim(0, 0.1)
-plt.ylim(0, 80000)
+plt.ylim(0, 75000)
 
 upper = gaussian_filter1d(y + errors, sigma = 3)
 lower = gaussian_filter1d(y - errors, sigma = 3)
