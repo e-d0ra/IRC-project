@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{amsmath}
+\makeatletter
+\ams@newcommand{\iiiiint}{\DOTSI\protect\MultiIntegral{5}}
+\renewcommand{\MultiIntegral}[1]{%
+  \edef\ints@c{\noexpand\intop
+    \ifnum#1=\z@\noexpand\intdots@\else\noexpand\intkern@\fi
+    \ifnum#1>\tw@\noexpand\intop\noexpand\intkern@\fi
+    \ifnum#1>\thr@@\noexpand\intop\noexpand\intkern@\fi
+    \ifnum#1>4 \noexpand\intop\noexpand\intkern@\fi % <---- added
+    \noexpand\intop
+    \noexpand\ilimits@
+  }%
+  \futurelet\@let@token\ints@a
+}
+\makeatother
+
+\begin{document}
+ \begin{equation*}
+   L = \frac{L}{4\pi r^2}
+ \end{equation*}
+ \begin{equation*}
+   C = \frac{L}{4\pi} \iint \frac{x_2}{x_2^2 + y_3^2 +z_3^2}^{\frac{3}{2}} \, dy_3 dz_3
+ \end{equation*}
+ \begin{equation*}
+   C = k\iiiiint \frac{x_2+x_1}{\left((x_2+x_1)^2+(y_3-y_1)^2+(z_3-z_1)^2\right)^\frac{3}{2}} \, dx_1 dy_1 dz_1 dy_3 dz_3
+ \end{equation*}
+ where,
+ \begin{equation*}
+  k = \frac{1}{4\pi}\frac{A}{\pi \left((y_1)^2+(z_1)^2\right)\cdot x_1} 
+ \end{equation*}
+\end{document}
